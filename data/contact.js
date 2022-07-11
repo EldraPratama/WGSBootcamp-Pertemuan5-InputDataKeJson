@@ -9,15 +9,16 @@ const rl = readline.createInterface({
 });
 
 //Mengecek folder dan file
-const dirPath = './data';
-if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath);
-}
+    const dirPath = './data';
+    if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath);
+    }
+    
+    const dataPath = './data/contacts.json';
+    if (!fs.existsSync(dataPath)) {
+        fs.writeFileSync(dataPath,'[]','utf-8');
+    }
 
-const dataPath = './data/contacts.json';
-if (!fs.existsSync(dataPath)) {
-    fs.writeFileSync(dataPath,'[]','utf-8');
-}
 
 //Pertanyaan
 const questions = (ask) =>{
